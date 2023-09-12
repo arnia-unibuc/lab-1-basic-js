@@ -1,0 +1,26 @@
+{
+  "name": "github-starter-course",
+  "version": "1.0.0",
+  "description": "## 🤓 Course overview and learning outcomes",
+  "main": "index.js",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "*",
+    "@babel/preset-env": "*",
+    "babel-jest": "*",
+    "jest": "*"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arnia-unibuc/github-starter-course.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arnia-unibuc/github-starter-course/issues"
+  },
+  "homepage": "https://github.com/arnia-unibuc/github-starter-course#readme"
+}
