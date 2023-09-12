@@ -1,14 +1,14 @@
 const { hello, lowercase, calc, sum, createStudent }  = require('./lab1');
 
-test('outputs "Hello, Florin!"', () => {
+test('[E1] outputs "Hello, Florin!"', () => {
     expect(hello("Florin")).toBe("Hello, Florin!");
 });
 
-test('outputs "daniel"', () => {
+test('[E2] outputs "daniel"', () => {
     expect(lowercase("DANIEL")).toBe("daniel")
 });
 
-test('outputs the result of all mathematical operations', () => {
+test('[E3] outputs the result of all mathematical operations', () => {
     x = 18;
     y = 69;
     expect(calc(x, y, '+')).toBe((x + y));
@@ -17,7 +17,7 @@ test('outputs the result of all mathematical operations', () => {
     expect(calc(x, y, '+')).toBe((x + y));
 });
 
-test('calculates the sum of an array of numeric items', () => {
+test('[E4] calculates the sum of an array of numeric items', () => {
     const arr = [4, 6, 2, 7, 3, 9, 3];
     expect(sum(arr)).toBe(34)
 
@@ -25,7 +25,7 @@ test('calculates the sum of an array of numeric items', () => {
     expect(sum(arr2)).toBe(24);
 })
 
-test('creates a student object', () => {
+test('[E5] creates a student object', () => {
     const student = createStudent('Florin', 'Stoian', 43);
     
     expect(student).toHaveProperty('firstName', 'Florin');
