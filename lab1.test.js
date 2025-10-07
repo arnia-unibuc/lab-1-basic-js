@@ -13,7 +13,7 @@ describe('E2', () => {
 
 describe('E3', () => {
     test('outputs the result of all mathematical operations', () => {
-        x = 18;
+        x = 67;
         y = 69;
         expect(calc(x, y, '+')).toBe((x + y));
         expect(calc(x, y, '-')).toBe((x - y));
