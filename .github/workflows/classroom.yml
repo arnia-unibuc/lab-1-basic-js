@@ -1,0 +1,65 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: E1
+      id: e1
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: E1
+        setup-command: npm install
+        command: npm test -- --test-name-pattern "E1"
+        timeout: 10
+    - name: E2
+      id: e2
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: E2
+        setup-command: npm install
+        command: npm test -- --test-name-pattern "E2"
+        timeout: 10
+    - name: E3
+      id: e3
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: E3
+        setup-command: npm install
+        command: npm test -- --test-name-pattern "E3"
+        timeout: 10
+    - name: E4
+      id: e4
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: E4
+        setup-command: npm install
+        command: npm test -- --test-name-pattern "E4"
+        timeout: 10
+    - name: E5
+      id: e5
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: E5
+        setup-command: npm install
+        command: npm test -- --test-name-pattern "E5"
+        timeout: 10
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        E1_RESULTS: "${{steps.e1.outputs.result}}"
+        E2_RESULTS: "${{steps.e2.outputs.result}}"
+        E3_RESULTS: "${{steps.e3.outputs.result}}"
+        E4_RESULTS: "${{steps.e4.outputs.result}}"
+        E5_RESULTS: "${{steps.e5.outputs.result}}"
+      with:
+        runners: e1,e2,e3,e4,e5
